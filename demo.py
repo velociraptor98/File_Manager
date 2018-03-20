@@ -1,6 +1,6 @@
 #NOT FINAL CODE 
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QToolTip, QMainWindow, QAction
+from PyQt5.QtWidgets import QApplication, QWidget, QToolTip, QMainWindow, QAction 
 from PyQt5.QtGui import QIcon, QFont
 import os
 
@@ -9,7 +9,7 @@ class demo(QMainWindow):
     
     def __init__(self):
         super().__init__()
-        
+        self.statusBar()
         self.initUI()
         
         
@@ -23,8 +23,28 @@ class demo(QMainWindow):
         menu=self.menuBar()
         fileM=menu.addMenu("File")
         editM=menu.addMenu("Edit")
-        searchM=menu.addMenu("search")
+        searchM=menu.addMenu("Search")
         helpM=menu.addMenu("Help")
+        newA=QAction("New",self)
+        newA.setShortcut("Ctrl+N")
+        renameA=QAction("rename",self)
+        renameA.setShortcut("Ctrl+R")
+        renameA.setStatusTip("Renames a file")
+        editM.addAction(renameA)
+        deleteA=QAction("delete",self)
+        deleteA.setShortcut("Ctrl+D")
+        deleteA.setStatusTip("Deletes a file")
+        editM.addAction(deleteA)
+        newA.setStatusTip("Creates a new file")
+        fileM.addAction(newA)
+        exitA=QAction(QIcon(dirn+"/exit_ico24.png"),"&Exit",self)
+        exitA.setShortcut("Ctrl+E")
+        exitA.setStatusTip("closes the file manager")
+        exitA.triggered.connect(self.close)
+        fileM.addAction(exitA)
+        aboutA=QAction("About",self)
+        aboutA.setStatusTip("Displays Information about the applicatin")
+        helpM.addAction(aboutA)
         self.show()
         
         
