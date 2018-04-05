@@ -1,4 +1,4 @@
-#NOT FINAL CODE 
+
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QToolTip, QMainWindow, QAction, QFileSystemModel, QTreeView, QVBoxLayout, QMessageBox, QInputDialog ,QFileDialog
 from PyQt5.QtGui import QIcon, QFont
@@ -100,15 +100,13 @@ class demo(QMainWindow):
             if okp:
                 dirN=dirN+"\\"
                 for root, dirs, files in os.walk(dirN):
-                    self.statusBar().showMessage(os.path.join(root, fileN))
+                    self.statusBar().showMessage(root)
                     if fileN in files:
-                        fileFound=win32api.GetShortPathName((os.path.join(root,fileN)))
-                        print(fileFound)
-                        QMessageBox.about(self,"Result",fileFound)
-                        a=True
-                        break
+                     a=True
+                     QMessageBox.about(self,"result",os.path.join(root,fileN))
+                     break
                 if(a==False):
-                    QMessageBox.about(self,"Result","No such file found")
+                    QMessageBox.about(self,"Result","File not found")
                     
     def newFile(self):
      options=QFileDialog.Options()
