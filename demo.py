@@ -1,16 +1,11 @@
 
 import sys
-<<<<<<< HEAD
 from PyQt5.QtWidgets import QApplication, QWidget, QToolTip, QMainWindow, QAction 
-
 from PyQt5.QtWidgets import QApplication, QWidget, QToolTip, QMainWindow, QAction, QFileSystemModel, QTreeView, QVBoxLayout 
-=======
 from PyQt5.QtWidgets import QApplication, QWidget, QToolTip, QMainWindow, QAction, QFileSystemModel, QTreeView, QVBoxLayout, QMessageBox, QInputDialog ,QFileDialog
->>>>>>> 17ac5aeff1ba9227ff695b5fff2826e21527c9ba
 from PyQt5.QtGui import QIcon, QFont
 import webbrowser
 import os
-import win32api
 
 """view class allows the creation of the path struture of the disk"""
 class view(QWidget):
