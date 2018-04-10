@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import QApplication, QWidget, QToolTip, QMainWindow, QActio
 from PyQt5.QtGui import QIcon, QFont
 import webbrowser
 import os
-import win32api
 
 """view class allows the creation of the path struture of the disk"""
 class view(QWidget):
@@ -68,6 +67,7 @@ class demo(QMainWindow):
         fileM.addAction(openA)
         renameA=QAction(QIcon(dirn1+"/rename_ico24.png"),"rename",self)
         renameA.setShortcut("Ctrl+R")
+        renameA.triggered.connect(self.rename)
         renameA.setStatusTip("Renames a file")
         editM.addAction(renameA)
         deleteA=QAction(QIcon(dirn1+"/delete_ico24.png"),"delete",self)
@@ -120,6 +120,9 @@ class demo(QMainWindow):
         fileName,_=QFileDialog.getOpenFileName(self,"Open","","All Files (*)",options=options)
         if(fileName):
             os.startfile(fileName)
+    
+    def rename(self):
+        QMessageBox.about(self,"IMPORTANT","Double Click on the file name you want to change in the tree and rename .")
         
         
 if __name__ == '__main__':
