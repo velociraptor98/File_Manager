@@ -45,7 +45,6 @@ class demo(QMainWindow):
         self.setWindowTitle('File_Manager')
         dirn=os.path.dirname(__file__)
         dirn1=dirn+"/Icon"
-        os.chdir(dirn+"/ test")
         print(os.getcwd())
         self.setWindowIcon(QIcon(dirn1+'/files_ico32.png'))   
         menu=self.menuBar()
@@ -77,6 +76,7 @@ class demo(QMainWindow):
         fileM.addAction(openA)
         renameA=QAction(QIcon(dirn1+"/rename_ico24.png"),"rename",self)
         renameA.setShortcut("Ctrl+R")
+        renameA.triggered.connect(self.rename)
         renameA.setStatusTip("Renames a file")
         editM.addAction(renameA)
         deleteA=QAction(QIcon(dirn1+"/delete_ico24.png"),"delete",self)
@@ -133,6 +133,9 @@ class demo(QMainWindow):
         fileName,_=QFileDialog.getOpenFileName(self,"Open","","All Files (*)",options=options)
         if(fileName):
             os.startfile(fileName)
+    
+    def rename(self):
+        QMessageBox.about(self,"IMPORTANT","Double Click on the file name you want to change in the tree and rename .")
         
         
 if __name__ == '__main__':
