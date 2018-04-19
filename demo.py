@@ -1,7 +1,5 @@
 
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QToolTip, QMainWindow, QAction 
-from PyQt5.QtWidgets import QApplication, QWidget, QToolTip, QMainWindow, QAction, QFileSystemModel, QTreeView, QVBoxLayout 
 from PyQt5.QtWidgets import QApplication, QWidget, QToolTip, QMainWindow, QAction, QFileSystemModel, QTreeView, QVBoxLayout, QMessageBox, QInputDialog ,QFileDialog
 from PyQt5.QtGui import QIcon, QFont
 import webbrowser
