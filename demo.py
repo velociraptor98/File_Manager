@@ -43,7 +43,6 @@ class demo(QMainWindow):
         self.setWindowTitle('File_Manager')
         dirn=os.path.dirname(__file__)
         dirn1=dirn+"/Icon"
-        os.chdir(dirn+"/ test")
         print(os.getcwd())
         self.setWindowIcon(QIcon(dirn1+'/files_ico32.png'))   
         menu=self.menuBar()
