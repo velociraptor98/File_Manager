@@ -15,5 +15,5 @@ A file manager made using python3 and pyqt5
 
 ### Images
 
-![Screen1](/images/1.jpg)
-![Screen2](/images/2.jpg)
+![Screen1](/1.jpg)
+![Screen2](/2.jpg)
