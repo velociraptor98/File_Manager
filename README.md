@@ -1,7 +1,9 @@
 # File_Manager
+
+
 A file manager made using python3 and pyqt5
 
-
+### Functions
 1 . New -> creates a new file
 
 2 . Open -> opens a given file in its native application
@@ -10,3 +12,8 @@ A file manager made using python3 and pyqt5
 (Firstly enter the name of the file along with the extension and then enter the root directory for where you want to search)
 
 4 . About-> Loads the github page in your default browser
+
+### Images
+
+![Screen1](/images/1.jpg)
+![Screen2](/images/2.jpg)
